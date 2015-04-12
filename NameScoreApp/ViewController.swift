@@ -21,9 +21,22 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func showAlert() {
+        let VERSION: Float = (UIDevice.currentDevice().systemVersion as NSString).floatValue
+        if VERSION >= 8.0 {
+            let alertController = UIAlertController(title: "Error", message: "please enter your name", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        } else {
+            
+        }
+    }
+    
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
         if identifier == "showResult" {
             if self.textField.text == "" {
+                self.showAlert()
                 return false
             }
             return true
