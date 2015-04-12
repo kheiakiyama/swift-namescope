@@ -8,12 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var sendButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.textField.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.sendButton.sendActionsForControlEvents(.TouchUpInside)
+        return true
     }
     
     override func viewWillAppear(animated: Bool) {

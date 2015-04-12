@@ -86,6 +86,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="姓名診断" id="aBW-ur-Kf3"/>
                     <connections>
+                        <outlet property="sendButton" destination="wJ0-9G-lKO" id="Oqm-x2-Wkp"/>
                         <outlet property="textField" destination="7c7-C2-yOH" id="c7I-0R-Ybp"/>
                     </connections>
                 </viewController>
