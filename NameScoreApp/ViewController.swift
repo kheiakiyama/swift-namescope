@@ -20,10 +20,22 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        if identifier == "showResult" {
+            if self.textField.text == "" {
+                return false
+            }
+            return true
+        }
+        return true
+    }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let resultViewController: ResultViewController = segue.destinationViewController as! ResultViewController
-        resultViewController.myName = textField.text
+        if segue.identifier == "showResult" {
+            let resultViewController: ResultViewController = segue.destinationViewController as! ResultViewController
+            resultViewController.myName = textField.text
+        }
     }
 }
 
