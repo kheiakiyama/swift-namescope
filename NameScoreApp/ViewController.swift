@@ -29,7 +29,11 @@ class ViewController: UIViewController {
             alertController.addAction(defaultAction)
             self.presentViewController(alertController, animated: true, completion: nil)
         } else {
-            
+            let alert = UIAlertView()
+            alert.title = "Error"
+            alert.message = "Please enter your name"
+            alert.addButtonWithTitle("OK")
+            alert.show()
         }
     }
     
