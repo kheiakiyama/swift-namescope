@@ -57,6 +57,7 @@ class ViewController: UIViewController {
         if segue.identifier == "showResult" {
             let resultViewController: ResultViewController = segue.destinationViewController as! ResultViewController
             resultViewController.myName = textField.text
+            self.textField.resignFirstResponder()
         }
     }
 }
