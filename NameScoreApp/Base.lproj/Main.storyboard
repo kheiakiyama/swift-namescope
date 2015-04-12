@@ -5,6 +5,49 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--診断結果-->
+        <scene sceneID="t5V-oh-WLp">
+            <objects>
+                <viewController id="iWI-mR-kHy" customClass="ResultViewController" customModule="NameScoreApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7uq-LY-N1w"/>
+                        <viewControllerLayoutGuide type="bottom" id="uxh-95-Pfo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jSB-NC-bBc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あなたの点数は..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33Q-a7-DF7">
+                                <rect key="frame" x="233" y="193" width="134" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="71" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Um-G1-v7Q">
+                                <rect key="frame" x="267" y="264" width="66" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="33Q-a7-DF7" secondAttribute="centerX" id="OUW-Xr-TLf"/>
+                            <constraint firstAttribute="centerY" secondItem="4Um-G1-v7Q" secondAttribute="centerY" id="ide-L0-SZW"/>
+                            <constraint firstAttribute="centerX" secondItem="4Um-G1-v7Q" secondAttribute="centerX" id="la2-r4-f45"/>
+                            <constraint firstItem="4Um-G1-v7Q" firstAttribute="top" secondItem="33Q-a7-DF7" secondAttribute="bottom" constant="50" id="oOB-BO-Kse"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="診断結果" id="wUs-qO-cC2"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="33Q-a7-DF7" id="AeF-qI-HN3"/>
+                        <outlet property="scoreLabel" destination="4Um-G1-v7Q" id="ocJ-rZ-Joh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xRt-aD-wCU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1858" y="346"/>
+        </scene>
         <!--姓名診断-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -27,6 +70,9 @@
                                 <state key="normal" title="Send">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="iWI-mR-kHy" kind="show" identifier="showResult" id="7Hf-QN-mHT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -39,6 +85,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="姓名診断" id="aBW-ur-Kf3"/>
+                    <connections>
+                        <outlet property="textField" destination="7c7-C2-yOH" id="c7I-0R-Ybp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
